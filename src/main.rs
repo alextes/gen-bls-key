@@ -22,12 +22,7 @@ fn generate_secret_key(rng: &mut impl RngCore) -> Result<SecretKey, blst::BLST_E
 
 /// Parse a hex-encoded private key into a SecretKey
 fn parse_private_key(sk_hex: &str) -> Result<SecretKey, String> {
-    let sk_hex = if sk_hex.starts_with("0x") {
-        &sk_hex[2..]
-    } else {
-        sk_hex
-    };
-
+    let sk_hex = sk_hex.strip_prefix("0x").unwrap_or(sk_hex);
     let sk_bytes = hex::decode(sk_hex).map_err(|e| format!("Invalid hex format: {}", e))?;
     SecretKey::from_bytes(&sk_bytes).map_err(|e| format!("Invalid private key: {:?}", e))
 }
