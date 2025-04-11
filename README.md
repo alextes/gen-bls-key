@@ -2,6 +2,10 @@
 
 A command-line tool for generating BLS12-381 keys and deriving public keys from private keys.
 
+## ⚠️ Warning
+
+This package is minimally tested and should be used with caution. While it includes basic unit tests, it has not undergone extensive security audits or testing in production environments. Use at your own risk.
+
 ## Features
 
 - Generate new BLS12-381 key pairs (private and public keys)
