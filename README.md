@@ -24,7 +24,7 @@ cargo install gen-bls-key
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/gen-bls-key.git
+git clone https://github.com/alextes/gen-bls-key.git
 cd gen-bls-key
 
 # Build the project
